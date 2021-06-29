@@ -1,0 +1,8 @@
+name: RandyOres
+version: @version@
+main: net.kingdomscrusade.randyores.RandyOres
+api-version: 1.16
+depend: [ Vault, NBTAPI ]
+authors: [ LittleHillMYR ]
+description: Some guy told me to make a plugin similar to MineEconomy but 1.16 updated.
+website: http://kingdomscrusade.net/
