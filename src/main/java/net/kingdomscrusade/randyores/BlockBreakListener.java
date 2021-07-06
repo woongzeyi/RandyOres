@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SuppressWarnings("SpellCheckingInspection")
-public class BlockBreakListener implements Listener {
+public final class BlockBreakListener implements Listener {
 
     private final Economy econ = RandyOres.getEcon();
     private final Map<Material, Double> materialList = new HashMap<>() {
