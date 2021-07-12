@@ -11,19 +11,37 @@
 #
 # ===================================================================================
 
+# << Settings -- Variables that you can alter to modify plugin behavior >>
+Settings:
+  allowSilkTouch: true
+  # If `allowSilkTouch is set to false, system will check if the block
+  # they mined is in this list, if true, system will give money.
+  allowedSilkTouchBlocks: # Should be a list containing block ENUM names, eg. `- STONE`
+  allowCreativeMode: false
 
 
-# << Block money -- How much money the player gets when mining specific block >>
-BlockMoney:
+# << Blocks -- How much money the player gets when mining specific block >>
+Blocks:
   NETHERRACK: 0.01
   STONE: 0.1
+  DEEPSLATE: 0.1
   COAL_ORE: 1
+  DEEPSLATE_COAL_ORE: 1
   IRON_ORE: 2
+  DEEPSLATE_IRON_ORE: 2
+  COPPER_ORE: 2
+  DEEPSLATE_COPPER_ORE: 2
   REDSTONE_ORE: 2
+  DEEPSLATE_REDSTONE_ORE: 2
   NETHER_QUARTZ_ORE: 2
   NETHER_GOLD_ORE: 5
   LAPIS_ORE: 15
+  DEEPSLATE_LAPIS_ORE: 15
   GOLD_ORE: 25
+  DEEPSLATE_GOLD_ORE: 25
   DIAMOND_ORE: 50
+  DEEPSLATE_DIAMOND_ORE: 50
   ANCIENT_DEBRIS: 60
   EMERALD_ORE: 75
+  DEEPSLATE_EMERALD_ORE: 75
+

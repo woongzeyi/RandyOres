@@ -1,8 +1,12 @@
 name: RandyOres
 version: @version@
-main: net.kingdomscrusade.randyores.RandyOres
-api-version: 1.16
-depend: [ Vault, NBTAPI ]
-authors: [ LittleHillMYR ]
+main: ga.littlehillmyr.randyores.RandyOres
+api-version: 1.17
+depend:
+  - Vault
+author: LittleHillMYR
 description: Some guy told me to make a plugin similar to MineEconomy but 1.16 updated.
-website: http://kingdomscrusade.net/
+permissions:
+  randyores.blockmoney:
+    description: Allow players to get money when mining specific block
+    default: true

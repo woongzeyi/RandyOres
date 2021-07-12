@@ -1,4 +1,4 @@
-package net.kingdomscrusade.randyores;
+package ga.littlehillmyr.randyores;
 
 import lombok.Getter;
 import net.milkbowl.vault.economy.Economy;
@@ -25,7 +25,7 @@ public final class RandyOres extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        getServer().getPluginManager().registerEvents(new BlockBreakListener(), this); // Setting up listener
+        getServer().getPluginManager().registerEvents(new MiningListener(), this); // Setting up listener
     }
 
     @Override
