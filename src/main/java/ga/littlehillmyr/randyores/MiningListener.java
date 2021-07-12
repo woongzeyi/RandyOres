@@ -48,7 +48,7 @@ public final class MiningListener implements Listener {
         if (blockPrice == 0) return;
         if (!playerHasPermission) return;
         if (!creativeModeIsAllowed && playerIsInCreativeMode) return;
-        if (!silkTouchIsAllowed && playerIsUsingSilkTouch) if (!blockIsInSilkTouchBlockList) return;
+        if (!silkTouchIsAllowed && playerIsUsingSilkTouch && !blockIsInSilkTouchBlockList) return;
 
         econ.depositPlayer(player, blockPrice);
 
