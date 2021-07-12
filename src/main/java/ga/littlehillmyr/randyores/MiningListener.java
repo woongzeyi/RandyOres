@@ -13,11 +13,13 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public final class MiningListener implements Listener {
 
-    @NotNull private final Economy econ = RandyOres.getEcon();
-    @NotNull private final ArrayList<Location> blockPlaced = new ArrayList<>();
+    @NotNull private final Economy econ = Objects.requireNonNull(RandyOres.getEcon());
+    @NotNull private final ArrayList<@NotNull Location> blockPlaced = new ArrayList<>();
 
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onBlockPlace(final BlockPlaceEvent event) { blockPlaced.add(event.getBlock().getLocation()); }
@@ -25,10 +27,11 @@ public final class MiningListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onBlockBreak(final BlockBreakEvent event) {
 
+        @NotNull val config = Objects.requireNonNull(RandyOres.getPlugin()).getConfig();
         // Settings
-        val silkTouchIsAllowed = RandyOres.getPlugin().getConfig().getBoolean("Settings.allowSilkTouch");
-        val silkTouchBlockList = RandyOres.getPlugin().getConfig().getList("Settings.allowedSilkTouchBlocks");
-        val creativeModeIsAllowed = RandyOres.getPlugin().getConfig().getBoolean("Settings.allowCreativeMode");
+        val silkTouchIsAllowed = config.getBoolean("Settings.allowSilkTouch");
+        @NotNull val silkTouchBlockList = Objects.requireNonNullElse(config.getList("Settings.allowedSilkTouchBlocks"), List.of());
+        val creativeModeIsAllowed = config.getBoolean("Settings.allowCreativeMode");
         // Player info
         @NotNull val player = event.getPlayer();
         val playerIsUsingSilkTouch = player.getInventory().getItemInMainHand().containsEnchantment(Enchantment.SILK_TOUCH);
@@ -37,11 +40,11 @@ public final class MiningListener implements Listener {
         // Block info
         @NotNull val block = event.getBlock();
         @NotNull val blockName = block.getBlockData().getMaterial().toString();
-        val blockPrice = RandyOres.getPlugin().getConfig().getDouble("Blocks." + blockName);
+        val blockPrice = config.getDouble("Blocks." + blockName);
         @NotNull val blockLocation = block.getLocation();
-        val blockIsInSilkTouchBlockList = silkTouchBlockList != null && silkTouchBlockList.contains(blockName);
+        val blockIsInSilkTouchBlockList = silkTouchBlockList.contains(blockName);
 
-        if (blockPlaced.contains(blockLocation)) { try { blockPlaced.remove(blockLocation); } catch (Exception ignored) {  } return; }
+        if (blockPlaced.contains(blockLocation)) { blockPlaced.remove(blockLocation); return; }
         if (blockPrice == 0) return;
         if (!playerHasPermission) return;
         if (!creativeModeIsAllowed && playerIsInCreativeMode) return;
