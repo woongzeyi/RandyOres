@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'ga.littlehillmyr'
-version = '0.2.0-ALPHA'
+version = '0.2.1-ALPHA'
 
 sourceCompatibility = '16'
 targetCompatibility = '16'
@@ -31,6 +31,7 @@ idea {
 }
 
 processResources {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
     from(sourceSets.main.resources.srcDirs) {
         filter ReplaceTokens, tokens: [version: version]
     }
