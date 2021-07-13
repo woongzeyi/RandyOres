@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'ga.littlehillmyr'
-version = '0.2.2-ALPHA'
+version = '0.2.2'
 
 sourceCompatibility = '16'
 targetCompatibility = '16'
