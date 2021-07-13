@@ -4,6 +4,7 @@ import lombok.val;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -18,6 +19,7 @@ import java.util.Objects;
 
 public final class MiningListener implements Listener {
 
+    @NotNull private final FileConfiguration config = Objects.requireNonNull(RandyOres.getPlugin()).getConfig();
     @NotNull private final Economy econ = Objects.requireNonNull(RandyOres.getEcon());
     @NotNull private final ArrayList<@NotNull Location> blockPlaced = new ArrayList<>();
 
@@ -27,7 +29,6 @@ public final class MiningListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onBlockBreak(final BlockBreakEvent event) {
 
-        @NotNull val config = Objects.requireNonNull(RandyOres.getPlugin()).getConfig();
         // Settings
         val silkTouchIsAllowed = config.getBoolean("Settings.allowSilkTouch");
         @NotNull val silkTouchBlockList = Objects.requireNonNullElse(config.getList("Settings.allowedSilkTouchBlocks"), List.of());
