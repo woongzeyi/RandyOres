@@ -14,7 +14,6 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public final class MiningListener implements Listener {
@@ -31,7 +30,7 @@ public final class MiningListener implements Listener {
 
         // Settings
         val silkTouchIsAllowed = config.getBoolean("Settings.allowSilkTouch");
-        @NotNull val silkTouchBlockList = Objects.requireNonNullElse(config.getList("Settings.allowedSilkTouchBlocks"), List.of());
+        @NotNull val silkTouchBlockList = config.getStringList("Settings.allowedSilkTouchBlocks");
         val creativeModeIsAllowed = config.getBoolean("Settings.allowCreativeMode");
         // Player info
         @NotNull val player = event.getPlayer();
