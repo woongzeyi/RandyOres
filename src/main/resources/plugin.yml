@@ -1,7 +1,7 @@
 name: RandyOres
 version: @version@
 main: ga.littlehillmyr.randyores.RandyOres
-api-version: 1.17
+api-version: 1.16
 depend:
   - Vault
 author: LittleHillMYR
