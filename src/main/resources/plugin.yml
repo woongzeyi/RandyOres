@@ -7,6 +7,6 @@ depend:
 author: LittleHillMYR
 description: Some guy told me to make a plugin similar to MineEconomy but 1.16 updated.
 permissions:
-  randyores.blockmoney:
+  randyores.moneyperblock:
     description: Allow players to get money when mining specific block
     default: true

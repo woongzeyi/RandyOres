@@ -14,9 +14,7 @@
 # << Settings -- Variables that you can alter to modify plugin behavior >>
 Settings:
   allowSilkTouch: true
-  # If `allowSilkTouch is set to false, system will check if the block
-  # they mined is in this list, if true, system will give money.
-  allowedSilkTouchBlocks: # Should be a list containing block ENUM names, eg. `- STONE`
+  allowedSilkTouchBlocks: ~
   allowCreativeMode: false
 
 

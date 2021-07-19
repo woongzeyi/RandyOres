@@ -36,7 +36,7 @@ public final class MiningListener implements Listener {
         @NotNull val player = event.getPlayer();
         val playerIsUsingSilkTouch = player.getInventory().getItemInMainHand().containsEnchantment(Enchantment.SILK_TOUCH);
         val playerIsInCreativeMode = player.getGameMode() == GameMode.CREATIVE;
-        val playerHasPermission = player.hasPermission("randyores.blockmoney");
+        val playerHasPermission = player.hasPermission("randyores.moneyperblock");
         // Block info
         @NotNull val block = event.getBlock();
         @NotNull val blockName = block.getBlockData().getMaterial().toString();
