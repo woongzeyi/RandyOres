@@ -1,5 +1,5 @@
-# <img src = "README.assets/randyores.png" alt = "RandyOres Logo" width = "2em">RandyOres
-A mining economy plugin made for Paper Spigot servers.
+# <img src = "README.assets/randyores.png" alt = "RandyOres Logo" width = "50">RandyOres
+A mining economy plugin made for Spigot servers.
 
 ## Version compatibility
 | Minecraft version | Compatibility                                                |
