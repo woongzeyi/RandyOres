@@ -39,7 +39,7 @@ public final class MiningListener implements Listener {
         val playerHasPermission = player.hasPermission("randyores.moneyperblock");
         // Block info
         @NotNull val block = event.getBlock();
-        @NotNull val blockName = block.getBlockData().getMaterial().toString();
+        @NotNull val blockName = block.getType().name();
         val blockPrice = config.getDouble("Blocks." + blockName);
         @NotNull val blockLocation = block.getLocation();
         val blockIsInSilkTouchBlockList = silkTouchBlockList.contains(blockName);
