@@ -1,4 +1,4 @@
-# <img src = "README.assets/randyores.png" alt = "RandyOres Logo" width = "50">RandyOres
+# <img src = "README.assets/randyores.png" alt = "RandyOres Logo" width = "35"> RandyOres
 A mining economy plugin made for Spigot servers.
 
 ## Version compatibility
