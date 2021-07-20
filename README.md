@@ -1,12 +1,16 @@
-# <img src = "README.assets/randyores.png" alt = "RandyOres Logo" width = "70">RandyOres
+# <img src = "README.assets/randyores.png" alt = "RandyOres Logo" width = "2em">RandyOres
 A mining economy plugin made for Paper Spigot servers.
 
 ## Version compatibility
-| Minecraft version |                       Compatibility                       |
-| ----------------- | --------------------------------------------------------- |
-| 1.15 or below     | Unsupported due to being compiled with Minecraft 1.16 API |
-| 1.16              | Supported natively                                        |
-| 1.17              | Supported                                                 |
+| Minecraft version | Compatibility                                                |
+| ----------------- | ------------------------------------------------------------ |
+| Below 1.13        | Unsupported due to `api-version` being set to `1.13`.        |
+| 1.13              | Supported natively. Support will be dropped on Minecraft 1.18 update. |
+| 1.14              | Supported.                                                   |
+| 1.15              | Supported.                                                   |
+| 1.16              | Supported.                                                   |
+| 1.17              | Supported.                                                   |
+| 1.18              | Will be supported not long after its Spigot stable release.  |
 
 ## Installation
 1. Make sure you have [Vault](https://www.spigotmc.org/resources/vault.34315/) plugin, and an 
